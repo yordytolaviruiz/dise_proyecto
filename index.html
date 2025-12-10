@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRESA CON CREMA - Tu Antojito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🍓</div>
+                    <div class="logo-text">
+                        <h1>FRESA CON CREMA</h1>
+                        <p>Tu Antojito</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <button class="nav-btn active" data-view="home">
+                        <span class="icon">🏠</span>
+                        Inicio
+                    </button>
+                    <button class="nav-btn" data-view="cart">
+                        <span class="icon">🛒</span>
+                        Carrito
+                        <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
+                    </button>
+                    <button class="nav-btn" data-view="analytics">
+                        <span class="icon">📊</span>
+                        Análisis
+                    </button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" id="mobileNav">
+                <button class="nav-btn-mobile active" data-view="home">
+                    <span class="icon">🏠</span>
+                    Inicio
+                </button>
+                <button class="nav-btn-mobile" data-view="cart">
+                    <span class="icon">🛒</span>
+                    Carrito
+                    <span class="cart-badge-mobile" id="cartBadgeMobile" style="display: none;">0</span>
+                </button>
+                <button class="nav-btn-mobile" data-view="analytics">
+                    <span class="icon">📊</span>
+                    Análisis
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Home View -->
+            <div id="homeView" class="view active">
+                <!-- Hero Section -->
+                <div class="hero">
+                    <div class="hero-content">
+                        <h2>Bienvenido a Tu Antojito 🍓</h2>
+                        <p class="hero-text">
+                            Las mejores fresas con crema de la ciudad. Frescas, deliciosas y preparadas con amor cada día.
+                        </p>
+                        <div class="hero-badges">
+                            <div class="badge">⭐ Calidad Premium</div>
+                            <div class="badge">🚀 Entrega Rápida</div>
+                            <div class="badge">💯 Frescura Garantizada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <h3 class="section-title">Nuestros Productos</h3>
+                <div class="products-grid" id="productsGrid"></div>
+
+                <!-- Info Section -->
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">🍓</div>
+                        <h4>Fresas Frescas</h4>
+                        <p>Seleccionadas diariamente para garantizar la mejor calidad</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🥛</div>
+                        <h4>Crema Natural</h4>
+                        <p>Preparada con ingredientes naturales y receta tradicional</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">⚡</div>
+                        <h4>Servicio Rápido</h4>
+                        <p>Tu pedido listo en minutos para disfrutar al instante</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart View -->
+            <div id="cartView" class="view">
+                <h2 class="page-title">Tu Carrito</h2>
+                <div id="cartContent"></div>
+            </div>
+
+            <!-- Analytics View -->
+            <div id="analyticsView" class="view">
+                <div class="analytics-header">
+                    <h2 class="page-title">Panel de Análisis</h2>
+                    <p class="subtitle">Monitorea el rendimiento de tu negocio</p>
+                </div>
+
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card kpi-pink">
+                        <div class="kpi-header">
+                            <span class="kpi-icon">💰</span>
+                            <span class="kpi-trend">+12.5%</span>
+                        </div>
+                        <div class="kpi-value">$28,650</div>
+                        <div class="kpi-label">Ingresos Totales</div>
+                    </div>
+                    <div class="kpi-card kpi-red">
+                        <div class="kpi-header">
+                            <span class="kpi-icon">🛍️</span>
+                            <span class="kpi-trend">+8.2%</span>
+                        </div>
+                        <div class="kpi-value">245</div>
+                        <div class="kpi-label">Pedidos Completados</div>
+                    </div>
+                    <div class="kpi-card kpi-purple">
+                        <div class="kpi-header">
+                            <span class="kpi-icon">👥</span>
+                            <span class="kpi-trend">+15.3%</span>
+                        </div>
+                        <div class="kpi-value">189</div>
+                        <div class="kpi-label">Clientes Únicos</div>
+                    </div>
+                    <div class="kpi-card kpi-orange">
+                        <div class="kpi-header">
+                            <span class="kpi-icon">📈</span>
+                            <span class="kpi-trend">+5.1%</span>
+                        </div>
+                        <div class="kpi-value">$117</div>
+                        <div class="kpi-label">Valor Promedio</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3 class="chart-title">📅 Ventas por Día</h3>
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3 class="chart-title">Distribución de Ventas</h3>
+                        <canvas id="pieChart"></canvas>
+                        <div class="legend" id="pieLegend"></div>
+                    </div>
+                    <div class="chart-card">
+                        <h3 class="chart-title">Tráfico por Hora</h3>
+                        <canvas id="barChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3 class="chart-title">Productos Más Vendidos</h3>
+                        <div class="top-products" id="topProducts"></div>
+                    </div>
+                </div>
+
+                <!-- Insights -->
+                <div class="insights-card">
+                    <h3>💡 Insights y Recomendaciones</h3>
+                    <div class="insights-grid">
+                        <div class="insight">
+                            <div class="insight-title">📈 Pico de Ventas</div>
+                            <p>Los fines de semana generan 40% más ventas. Considera aumentar el inventario.</p>
+                        </div>
+                        <div class="insight">
+                            <div class="insight-title">🕐 Hora Óptima</div>
+                            <p>Entre 5pm y 7pm es tu horario pico. Ideal para promociones especiales.</p>
+                        </div>
+                        <div class="insight">
+                            <div class="insight-title">⭐ Producto Estrella</div>
+                            <p>Fresas con Crema Clásica representa el 35% de tus ventas totales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-icon">🍓</div>
+                <p class="footer-title">FRESA CON CREMA - Tu Antojito</p>
+                <p class="footer-text">Delicias frescas todos los días</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
